@@ -1,0 +1,246 @@
+================================================================================
+DATA SCIENCE ASSIGNMENTS & THEORY QUESTIONS (SESSIONS 1 TO 4)
+================================================================================
+
+--------------------------------------------------------------------------------
+SESSION 1: DATA SCIENCE CONCEPTS & INDUSTRY APPLICATIONS
+--------------------------------------------------------------------------------
+
+[Task 1]
+Question: List 3 apps you use daily (such as Instagram, Zomato, Paytm) and describe one way each app uses data to improve your experience.
+
+Answer:
+1. Instagram:
+   - Data Usage: Tracks user engagement signals such as watch time on Reels, post likes, saves, shares, and account interactions.
+   - Experience Improvement: Uses collaborative filtering algorithms to curate a personalized Explore feed and continuous Reels recommendation stream tailored to user preferences.
+
+2. Zomato:
+   - Data Usage: Aggregates historical preparation times, real-time GPS locations of delivery partners, historical route speeds, and live traffic/weather data.
+   - Experience Improvement: Calculates accurate Estimated Time of Arrival (ETA) updates and recommends nearby restaurants with fast delivery.
+
+3. Paytm:
+   - Data Usage: Analyzes transaction velocity, user location metadata, device identifiers, and payment frequency patterns.
+   - Experience Improvement: Dynamically routes payments through the fastest available UPI server while instantly detecting and flagging fraudulent payment attempts.
+
+
+[Task 2]
+Question: Create a table with three columns: Statistics, Programming, and Domain Knowledge. For each column, write 2 specific skills or concepts that are important for a Data Scientist and give a real-world example (not from healthcare) of how each is used.
+
+Answer:
+
+STATISTICS:
+1. Hypothesis Testing (A/B Testing)
+   - Real-World Example: An e-commerce platform tests two checkout button colors (Green vs. Orange) on 50,000 visitors to measure if Orange yields a statistically significant increase in completed purchases.
+2. Time Series & Regression Forecasting
+   - Real-World Example: A retail chain predicts inventory demand for the upcoming holiday season based on historical sales trends, market inflation, and promotional event schedules.
+
+PROGRAMMING:
+1. Data Wrangling & Manipulation (Pandas / SQL)
+   - Real-World Example: A video streaming service cleans raw user click logs, handles missing values, and aggregates session lengths to calculate Daily Active Users (DAU).
+2. Machine Learning Model Deployment (API Integration)
+   - Real-World Example: A fintech lender wraps a trained scikit-learn credit scoring model inside a FastAPI REST endpoint to approve or reject loan applications in seconds.
+
+DOMAIN KNOWLEDGE:
+1. Business Metric Optimization (LTV, CAC, Churn)
+   - Real-World Example: A SaaS subscription platform builds a churn prediction model to identify users with declining app usage and automatically trigger retention discounts before renewal.
+2. Supply Chain & Logistics Operations Workflow
+   - Real-World Example: A quick-commerce app optimizes warehouse pick paths and driver dispatch routes to fulfill 10-minute delivery guarantees.
+
+
+[Task 3]
+Question: Imagine you work for a music streaming app like Spotify. Write a short scenario (3-4 sentences) describing how data-driven decision making could help the app recommend new songs to users.
+
+Answer:
+When a user listens to indie-pop tracks late in the evening, Spotify tracks implicit feedback metrics such as song completion rates, skips, and repeat listens. Using matrix factorization and audio feature clustering (analyzing tempo, energy, and acousticness), the recommendation engine identifies similar tracks enjoyed by users with matching taste profiles. It then dynamically populates the user's 'Discover Weekly' playlist with under-the-radar songs that fit their late-night listening mood. This data-driven personalization increases user engagement and session duration without manual playlist curation.
+
+
+[Task 4]
+Question: Pick one industry from this list: e-commerce, sports, or transportation. Research and describe one innovative way data science is being used in that industry today.
+
+Answer:
+- Chosen Industry: Sports
+- Application: Computer Vision & Spatial Analytics (Optical Tracking)
+- Description: Professional sports leagues (such as the NBA, Premier League, and IPL) use high-speed optical camera arrays (e.g., Hawk-Eye, Second Spectrum) and computer vision algorithms to track 2D/3D coordinates of players and the ball 25+ times per second. Data scientists process millions of coordinate data points to calculate advanced metrics such as Expected Goals (xG), Pitch Control, and Defensive Pressing Efficiency. Coaches use these insights for real-time tactical adjustments, while broadcast networks overlay live probabilities on screen to enhance fan engagement.
+
+
+--------------------------------------------------------------------------------
+SESSION 2: PROBLEM DEFINITION, DATASETS & FEATURE ENGINEERING
+--------------------------------------------------------------------------------
+
+[Task 1]
+Question: Pick any one app you use daily (like Zomato, Instagram, or Flipkart) and write a short problem definition for a data science project that could improve the app's user experience. Clearly state the business goal and what data you would need.
+
+Answer:
+- App Selected: Zomato
+- Problem Definition: Dynamic Order Preparation & Delivery Time (ETA) Prediction under varying traffic and restaurant loads.
+- Business Goal: Reduce late delivery customer support tickets by 20%, improve delivery partner dispatch efficiency, and minimize customer order anxiety.
+- Data Needed:
+  1. Restaurant Metadata: Historical kitchen prep time per dish, active kitchen queue length.
+  2. Order Details: Number of items ordered, time of order (breakfast/lunch/dinner rush).
+  3. Spatial & Contextual Data: Distance between restaurant and customer, live traffic density index, live weather conditions.
+  4. Delivery Partner Metrics: Historical speed of assigned rider, live GPS coordinates.
+
+
+[Task 2]
+Question: Use the requests library in Python to fetch the latest 5 posts from the JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts) and print the title of each post.
+
+Answer:
+- Script File Created: session2_task2.py
+- Key Concept: HTTP GET requests, parsing JSON responses in Python.
+- Fetch Output:
+  1. sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+  2. qui est esse
+  3. ea molestias quasi exercitationem repellat qui ipsa sit aut
+  4. eum et est occaecati
+  5. nesciunt quas odio
+
+
+[Task 3]
+Question: Given a CSV file with columns: song_name, artist, streams, and genre (simulate a mini Spotify dataset with at least 10 rows), write Python code to load the data using pandas and display the number of songs in each genre.
+
+Answer:
+- Dataset Created: spotify_mini.csv
+- Script File Created: session2_task3.py
+- Key Concept: Loading CSVs with pandas read_csv() and using value_counts() on categorical columns.
+- Output Song Counts per Genre:
+  Pop: 5
+  Rock: 3
+  Hip-Hop: 3
+  Electronic: 2
+
+
+[Task 4]
+Question: Create a simple bar chart using matplotlib to visualize the number of movies per genre from a dataset (you can make up a small dataset with at least 3 genres and 10 movies, like BookMyShow's movie listings).
+
+Answer:
+- Script File Created: session2_task4.py
+- Output Image Created: movies_per_genre.png
+- Key Concept: Data visualization using matplotlib.pyplot, customizing colors, title, labels, gridlines, and saving plot images.
+
+
+[Task 5]
+Question: Use ChatGPT to suggest 3 new features that could be engineered from a dataset of online food orders (like Zomato orders: order time, restaurant, cuisine, delivery time, rating). List the features and explain how each could help a data science model.
+
+Answer:
+1. Is_Peak_Meal_Hour (Binary Flag: 1 if order time is between 12:00-14:30 or 19:00-22:00, else 0):
+   - Model Benefit: Captures peak kitchen rush hours and driver surcharges, allowing ETA prediction models to automatically add buffer times during peak meal hours.
+2. Historical_Prep_Speed_Ratio (Ratio of a restaurant's average preparation time compared to the overall city average prep time across all restaurants):
+   - Model Benefit: Helps the model differentiate between fast-food outlets (fast prep) and fine-dining restaurants (longer prep) regardless of cuisine type.
+3. Rating_vs_Cuisine_Avg (Difference between an individual restaurant's rating and the average rating of all restaurants serving the same cuisine):
+   - Model Benefit: Normalizes rating bias across different food types (e.g., fast food vs. gourmet desserts), isolating genuine restaurant quality for recommendation models.
+
+
+--------------------------------------------------------------------------------
+SESSION 3: GIT & GITHUB FUNDAMENTALS & COLLABORATION
+--------------------------------------------------------------------------------
+
+[Task 1]
+Question: Install Git on your system, open a terminal or command prompt, and run git --version to confirm the installation.
+
+Answer:
+- Command: git --version
+- Verified Output: git version 2.47.1.windows.1
+
+
+[Task 2]
+Question: Initialize a new local Git repository named music-recommendation in a folder, create a README.md file inside it, and make your first commit with the message 'Initial commit for music-recommendation project'.
+
+Answer:
+- Folder Created: music-recommendation
+- Commands Executed:
+  mkdir music-recommendation
+  cd music-recommendation
+  git init
+  create README.md
+  git add README.md
+  git commit -m "Initial commit for music-recommendation project"
+
+
+[Task 3]
+Question: Create a new GitHub repository called foodie-favorites, connect your local music-recommendation repository to this remote using git remote add origin, and push your commits to GitHub.
+
+Answer:
+- Commands Executed:
+  git remote add origin https://github.com/Heeya631/foodie-favorites.git
+  git branch -M main
+  git push -u origin main
+
+
+[Task 4]
+Question: Simulate a team collaboration: Edit your README.md to add a section called 'Top 3 Music Apps' (e.g., Spotify, YouTube Music, Wynk), commit the change, and push it to your GitHub repository. Then, use the GitHub website to create an Issue suggesting a new feature for your project (e.g., 'Add playlist sharing').
+
+Answer:
+- README.md edit: Added section with Spotify, YouTube Music, Wynk.
+- Commands Executed:
+  git add README.md
+  git commit -m "Add Top 3 Music Apps section to README.md"
+  git push
+- GitHub Issue Workflow: Navigated to GitHub repository Issues tab -> Clicked 'New Issue' -> Title: 'Add playlist sharing feature' -> Submitted description.
+
+
+[Task 5]
+Question: Write a short note (3-4 lines) explaining how using Git and GitHub can help you avoid the problem of having multiple versions of the same Jupyter notebook file (like analysis_v1.ipynb, analysis_final2.ipynb, etc.) when working on a data science project.
+
+Answer:
+Using Git and GitHub eliminates file clutter like analysis_v1.ipynb or analysis_final2.ipynb by maintaining a single master notebook file with a complete version history. Every modification is logged as an atomic commit, allowing developers to inspect exact code diffs, revert to any previous state (git checkout), and experiment safely on feature branches without duplicating files.
+
+
+--------------------------------------------------------------------------------
+SESSION 4: ADVANCED GIT WORKFLOWS & REPOSITORY CLONING
+--------------------------------------------------------------------------------
+
+[Task 1]
+Question: Install Git on your operating system (Windows, Mac, or Linux), open a terminal, and run git --version to confirm the installation.
+
+Answer:
+- Command: git --version
+- Output: git version 2.47.1.windows.1
+
+
+[Task 2]
+Question: Configure your Git username and email globally using git config --global user.name and git config --global user.email with your actual details.
+
+Answer:
+- Commands Executed:
+  git config --global user.name "Heeya631"
+  git config --global user.email "eirastarlight27@gmail.com"
+
+
+[Task 3]
+Question: Create a new folder called InstaCloneRepo, initialize it as a Git repository using git init, and observe the .git folder that gets created.
+
+Answer:
+- Directory Created: InstaCloneRepo
+- Commands Executed:
+  mkdir InstaCloneRepo
+  cd InstaCloneRepo
+  git init
+  Get-ChildItem -Force
+- Observation: Hidden .git folder initialized inside InstaCloneRepo containing repository configuration, hooks, objects, and refs.
+
+
+[Task 4]
+Question: Clone the public repository https://github.com/public-apis/public-apis into your system using git clone, then run git status inside the cloned folder and describe what you see.
+
+Answer:
+- Command Executed: git clone --depth 1 https://github.com/public-apis/public-apis.git
+- Command Executed: git status
+- Output:
+  On branch master
+  Your branch is up to date with 'origin/master'.
+  nothing to commit, working tree clean
+- Description: Confirms that the local workspace is on branch master, up to date with remote origin/master, and has no pending modified or untracked files.
+
+
+[Task 5]
+Question: Create a file called playlist.txt inside your InstaCloneRepo folder, add three song names, stage and commit the file using git add and git commit, and write a meaningful commit message following best practices (e.g., 'Add initial playlist with 3 songs').
+
+Answer:
+- File Created: playlist.txt inside InstaCloneRepo with 3 song entries.
+- Commands Executed:
+  git add playlist.txt
+  git commit -m "Add initial playlist with 3 songs"
+  git log --oneline
+- Verified Commit Log: 0e1784b Add initial playlist with 3 songs
+
+================================================================================

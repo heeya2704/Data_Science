@@ -1,0 +1,20 @@
+# Ignore all raw data files while keeping the directory structure
+data/raw/*
+!data/raw/.gitkeep
+
+# Ignore Jupyter Notebook Checkpoints across any directory level
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Ignore serialized model binaries and data pickle/hdf5 files
+*.h5
+*.pkl
+
+# OS & Environment junk
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
